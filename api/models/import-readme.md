@@ -1,0 +1,1 @@
+mongoimport --jsonArray --db jwt --collection jobs --file jobs.json

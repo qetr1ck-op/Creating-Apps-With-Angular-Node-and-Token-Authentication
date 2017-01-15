@@ -1,0 +1,21 @@
+<div class="navbar navbar-default">
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li router-active="active">
+          <a ng-link="['Home']">Home</a>
+      </li>
+      <li router-active="active">
+        <a ng-link="['Jobs']">Jobs</a>
+      </li>
+      <li ng-hide="$ctrl.isAuthenticated" router-active="active">
+        <a ng-link="['Register']">Register</a>
+      </li>
+      <li ng-hide="$ctrl.isAuthenticated" router-active="active">
+        <a ng-link="['Login']">Login</a>
+      </li>
+      <li ng-show="$ctrl.isAuthenticated" router-active="active">
+        <a ng-link="['Logout']">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+/* TRANSITION ANIMATIONS FOR MAIN VIEW
+------------------------------------------*/
+ng-outlet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* start 'enter' transition */
+  &.ng-enter {
+    opacity: 0;
+    transition: .5s;
+  }
+  /* end 'enter' transition */
+  &.ng-enter-active {
+    opacity: 1;
+  }
+}

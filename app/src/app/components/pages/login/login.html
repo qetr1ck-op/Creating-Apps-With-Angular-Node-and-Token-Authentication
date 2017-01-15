@@ -1,0 +1,55 @@
+<main>
+    <toast></toast>
+    <div class="container">
+        <section id="login">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-wrap">
+                        <h1>Login account</h1>
+                        <form name="$ctrl.registerForm" novalidate>
+                            <div class="form-group" ng-class="{'has-error': $ctrl.registerForm.email.$invalid}">
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" class="form-control"
+                                       placeholder="somebody@example.com"
+                                       ng-model="$ctrl.user.email" required>
+                                <div ng-if="$ctrl.registerForm.$submitted" ng-messages="$ctrl.registerForm.email.$error"
+                                     role="alert">
+                                    <div ng-message="required">
+                                        <span class="help-block">Please enter a value for this field.</span>
+                                    </div>
+                                    <div ng-message="email">
+                                        <span class="help-block">Incorrect format</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="sr-only">Password</label>
+                                <input type="{{$ctrl.inputType}}" name="password" id="password" class="form-control"
+                                       placeholder="Password"
+                                       ng-model="$ctrl.user.password">
+                                <div ng-if="$ctrl.registerForm.$submitted"
+                                     ng-messages="$ctrl.registerForm.password.$error"
+                                     role="alert">
+                                    <div ng-message="required">
+                                        <span class="help-block">Please enter a value for this field.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkbox" ng-class="{'show': $ctrl.isShowPassword}">
+                                <span class="character-checkbox" ng-click="$ctrl.showPasswords()"></span>
+                                <span class="label">Show password</span>
+                            </div>
+                            <input type="submit" class="btn btn-custom btn-lg btn-block" value="Log In"
+                                   ng-click="$ctrl.submit($ctrl.registerForm, $ctrl.user)">
+                            <input type="button" class="btn btn-custom btn-primary btn-lg btn-block" value="Log In with Google"
+                                   ng-click="$ctrl.signGoogle()">
+                        </form>
+                        <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot
+                            your password?</a>
+                        <hr>
+                    </div>
+                </div> <!-- /.col-xs-12 -->
+            </div> <!-- /.row -->
+        </section>
+    </div>
+</main>

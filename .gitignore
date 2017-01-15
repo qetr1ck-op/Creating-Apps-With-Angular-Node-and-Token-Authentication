@@ -1,0 +1,6 @@
+# User-specific stuff:
+.idea/
+
+# node_modules
+/app/node_modules/
+/api/node_modules/

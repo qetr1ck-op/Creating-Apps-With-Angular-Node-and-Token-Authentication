@@ -1,0 +1,14 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import "~bootswatch/darkly/variables";
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import "~bootswatch/darkly/bootswatch";
+@import "~ng-toast/dist/ngToast.min.css";
+
+@import "./animate-pages";
+
+html { height: 100%; }
+body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+}
