@@ -51,9 +51,10 @@ directive.
 
 # Google Auth provider
 
-# Manually authenticated using [google-console](https://console.developers.google.com/apis/credentials) via 
+* Manually authenticated using [google-console](https://console.developers.google.com/apis/credentials) via 
 [google flow with oath2](https://developers.google.com/identity/protocols/OAuth2)
-# Get user profile using [Google+ Platform](https://developers.google.com/+/web/people/)
-# Using [request-promise](https://www.npmjs.com/package/request-promise) for HTTP transactions
-# Refactor code using express's [middlewares](https://stormpath.com/blog/how-to-write-middleware-for-express-apps)
-# Creating iframe document to get access token from google api. Using [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+* Get user profile using [Google+ Platform](https://developers.google.com/+/web/people/)
+* Using [request-promise](https://www.npmjs.com/package/request-promise) for HTTP transactions
+* Refactor code using express's [middlewares](https://stormpath.com/blog/how-to-write-middleware-for-express-apps)
+* Creating iframe document to get access token from google api. Using [postMessage](https://developer.mozilla
+.org/en-US/docs/Web/API/Window/postMessage)
