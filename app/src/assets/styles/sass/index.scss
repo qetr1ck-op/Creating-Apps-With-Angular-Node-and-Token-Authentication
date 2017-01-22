@@ -3,6 +3,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 @import "~bootswatch/darkly/bootswatch";
 @import "~ng-toast/dist/ngToast.min.css";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
 
 @import "./animate-pages";
 

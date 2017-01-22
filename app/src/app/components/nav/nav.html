@@ -7,13 +7,13 @@
       <li router-active="active">
         <a ng-link="['Jobs']">Jobs</a>
       </li>
-      <li ng-hide="$ctrl.isAuthenticated" router-active="active">
+      <li ng-hide="$ctrl.isAuthenticated()" router-active="active">
         <a ng-link="['Register']">Register</a>
       </li>
-      <li ng-hide="$ctrl.isAuthenticated" router-active="active">
+      <li ng-hide="$ctrl.isAuthenticated()" router-active="active">
         <a ng-link="['Login']">Login</a>
       </li>
-      <li ng-show="$ctrl.isAuthenticated" router-active="active">
+      <li ng-show="$ctrl.isAuthenticated()" router-active="active">
         <a ng-link="['Logout']">Logout</a>
       </li>
     </ul>

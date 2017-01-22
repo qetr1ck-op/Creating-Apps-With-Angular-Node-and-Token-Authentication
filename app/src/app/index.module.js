@@ -18,6 +18,7 @@ const App = angular.module(
     'ngResource',
     'restangular',
     'wapweb.componentRouterActive',
+    'satellizer',
 
     // core
     require("./core/core.module").name,
@@ -25,8 +26,6 @@ const App = angular.module(
     // components
     require("./index.components").name,
 
-    // routes
-    require("./index.routes").name,
 
     // pages
     /*require("./pages/home/home.module").name,

@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const moment = require('moment');
 const secret = require('./../configs/constants').jwtSecret;
 
 function sign(payload) {
@@ -12,7 +13,8 @@ function verify(payload) {
 function createToken(req, user) {
   const payload = {
     iss: req.hostname,
-    sub: user._id
+    sub: user._id,
+    exp: moment().add(14, 'days').unix()
   };
 
   return sign(payload);

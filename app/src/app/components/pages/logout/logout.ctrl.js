@@ -1,8 +1,8 @@
-function HomeController(authToken) {
+function HomeController(authToken, $auth) {
   'ngInject';
 
   this.$routerOnActivate = () => {
-    authToken.removeToken();
+    $auth.logout();
     this.$router.navigate(['Home'])
   }
 }

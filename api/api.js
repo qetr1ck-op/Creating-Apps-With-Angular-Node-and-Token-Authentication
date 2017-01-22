@@ -9,6 +9,7 @@ const jwt = require('./services/jwt');
 const passport = require('passport');
 require('./strategies/config')(app);
 const authenticateGoogle = require('./strategies/remote-google');
+const authenticateFacebook = require('./strategies/remote-facebook');
 const saveSendToken = require('./services/save-send-token');
 const isAuthenticated = require('./services/is-authenticated');
 const getJobs = require('./services/get-jobs');
@@ -20,16 +21,20 @@ app.use(bodyParser.json());
 //Simple Usage (Enable All CORS Requests)
 app.use(cors());
 
-app.post('/register',
+app.post('/auth/register',
   passport.authenticate('local-register'),
   saveSendToken);
 
-app.post('/login/local',
+app.post('/auth/local',
   passport.authenticate('local-login'),
   saveSendToken);
 
-app.post('/login/google',
+app.post('/auth/google',
   authenticateGoogle,
+  saveSendToken);
+
+app.post('/auth/facebook',
+  authenticateFacebook,
   saveSendToken);
 
 app.get('/jobs',

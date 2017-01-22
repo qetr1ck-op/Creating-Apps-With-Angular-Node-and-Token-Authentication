@@ -1,4 +1,4 @@
-function HomeController(ngToast, api, authToken) {
+function HomeController(ngToast, api, $auth) {
   'ngInject';
 
   this.$onInit = () => {
@@ -7,29 +7,29 @@ function HomeController(ngToast, api, authToken) {
     this.isShowPassword = false;
   }
   this.$routerOnActivate = () => {
-    if (authToken.isAuthenticated())
+    if ($auth.isAuthenticated())
       this.navigateHome();
   }
   this.showPasswords = () => {
     this.isShowPassword = !this.isShowPassword;
     this.inputType = this.inputType === 'text' ? 'password' : 'text';
   }
-  this.submit = (form, user) => {
+  this.signup = (form, user) => {
     if (form.$invalid) return;
 
-    api.register().post(user)
+    $auth.signup(user)
       .then(res => {
         ngToast.create({
           className: 'success',
-          content: `User ${res.email} is successful saved`
+          content: `User ${res.data.email} is successful saved`
         });
-        authToken.setToken(res.token);
+        $auth.setToken(res.data.token);
         this.navigateHome();
       })
       .catch(err => {
         ngToast.create({
           className: 'danger',
-          content: err.message
+          content: err.message || err.data
         });
       })
 

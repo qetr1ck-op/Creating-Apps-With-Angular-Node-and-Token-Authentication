@@ -1,6 +1,9 @@
 export default class NavCtrl {
-  constructor() { }
-  $onChanges(changes) {
-    this.isAuthenticated = changes.isAuthenticated.currentValue;
+  constructor($auth) {
+    'ngInject';
+    this.$auth = $auth;
+  }
+  $onInit() {
+    this.isAuthenticated = this.$auth.isAuthenticated;
   }
 }

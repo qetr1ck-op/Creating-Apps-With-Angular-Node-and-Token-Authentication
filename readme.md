@@ -58,3 +58,11 @@ directive.
 * Refactor code using express's [middlewares](https://stormpath.com/blog/how-to-write-middleware-for-express-apps)
 * Creating iframe document to get access token from google api. Using [postMessage](https://developer.mozilla
 .org/en-US/docs/Web/API/Window/postMessage)
+
+# Angular Auth with Satelizer
+
+* Using [satellizer](https://github.com/sahat/satellizer) for Facebook authentication and replace existing Google auth 
+flow
+* Facebook auth flow using [official docs](https://developers.facebook.com/docs/graph-api/using-graph-api/)
+* Use [momentjs](https://momentjs.com) to create `exp` field for jwt token
+* Using [qs](https://www.npmjs.com/package/qs) for parsing query params

@@ -41,7 +41,7 @@ const googleStrategy = (req, res, next) => {
             displayName: profile.displayName,
             googleId: profile.id
           });
-          return user.save()
+          return user;
         })
     })
     .then(user => {

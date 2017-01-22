@@ -1,11 +1,9 @@
-import extend from 'lodash/extend';
-
 export default class Api {
-  constructor(Restangular, authToken) {
+  constructor(Restangular, authToken, REST) {
     'ngInject'
     this.restangular = Restangular
       .withConfig(function(config) {
-        config.setBaseUrl('http://localhost:3000');
+        config.setBaseUrl(REST.uri)
       })
       .addFullRequestInterceptor((element, operation, route, url, headers, params, httpConfig) => {
         let token = {};
@@ -14,7 +12,7 @@ export default class Api {
         }
         return {
           element, params, httpConfig,
-          headers: extend(headers, token)
+          headers: Object.assign(headers, token)
         };
       });
   }

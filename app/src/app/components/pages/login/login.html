@@ -12,6 +12,7 @@
                                 <input type="email" name="email" id="email" class="form-control"
                                        placeholder="somebody@example.com"
                                        ng-model="$ctrl.user.email" required>
+                                {{$ctrl.registerForm.$submitted}}
                                 <div ng-if="$ctrl.registerForm.$submitted" ng-messages="$ctrl.registerForm.email.$error"
                                      role="alert">
                                     <div ng-message="required">
@@ -39,10 +40,18 @@
                                 <span class="character-checkbox" ng-click="$ctrl.showPasswords()"></span>
                                 <span class="label">Show password</span>
                             </div>
-                            <input type="submit" class="btn btn-custom btn-lg btn-block" value="Log In"
-                                   ng-click="$ctrl.submit($ctrl.registerForm, $ctrl.user)">
-                            <input type="button" class="btn btn-custom btn-primary btn-lg btn-block" value="Log In with Google"
-                                   ng-click="$ctrl.signGoogle()">
+                            <input type="button" class="btn btn-custom btn-lg btn-block" value="Log In"
+                                   ng-click="$ctrl.login($ctrl.registerForm, $ctrl.user)">
+                            <button type="button" ng-click="$ctrl.authenticate('google')"
+                                    class="btn btn-custom btn-primary btn-lg btn-block">
+                                <i class="fa fa-google-plus"></i>
+                                Sign in with Google
+                            </button>
+                            <button type="button" ng-click="$ctrl.authenticate('facebook')"
+                                    class="btn btn-custom btn-primary btn-lg btn-block">
+                                <i class="fa fa-facebook"></i>
+                                Sign in with Facebook
+                            </button>
                         </form>
                         <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot
                             your password?</a>

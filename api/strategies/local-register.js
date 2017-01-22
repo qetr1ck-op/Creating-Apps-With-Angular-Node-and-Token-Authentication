@@ -9,7 +9,7 @@ const registerStrategy = (options) => {
     ModelUser.findOne({email: user.email})
       .then(isUser => {
         if (isUser) {
-          return done(null, false, {message: 'Email is already taken'});
+          return done('Email is already taken');
         }
         return user
       })
