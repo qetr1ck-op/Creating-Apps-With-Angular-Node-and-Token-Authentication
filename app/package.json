@@ -48,7 +48,7 @@
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.22.0",
     "imagemin-pngquant": "^5.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "manifest-revision-webpack-plugin": "^0.3.0",
     "ng-storage": "^0.3.2",
     "ng-toast": "^2.0.0",
