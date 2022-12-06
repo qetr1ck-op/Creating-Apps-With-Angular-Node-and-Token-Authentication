@@ -19,7 +19,7 @@
   "devDependencies": {
     "moment": "^2.17.1",
     "passport-google-oauth": "^1.0.0",
-    "qs": "^6.3.0",
+    "qs": "^6.3.3",
     "request-promise": "^4.1.1"
   }
 }
